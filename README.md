@@ -32,16 +32,15 @@ We can initialize a basic example:
 
 ### Local Environments
 The default REPL environment runs on the host process through Python `exec` calls. It uses the same virtual environment as the host process (i.e. it will have access to the same dependencies), but with some limitations in its available global modules. As an example, we can call RLM completions using GPT-5-nano with the Portkey client:
-```
+```python
 from rlm import RLM
+
 rlm = RLM(
     backend="portkey",
-    backend_kwargs={
-        "model_name": "@openai/gpt-5-nano",
-    },
+    backend_kwargs={"model_name": "@openai/gpt-5-nano"},
 )
 
-print(rlm.completion("Print me the first 100 powers of two, each on a newline."))
+print(rlm.completion("Print me the first 100 powers of two, each on a newline.").response)
 ```
 
 ### Isolated Environments
@@ -58,3 +57,4 @@ We currently support most major clients (OpenAI, Anthropic), as well as the rout
 **[Oct '25]** [Recursive Language Models Blogpost](https://alexzhang13.github.io/blog/2025/rlm/)
 
 ## Optional: Visualizing RLM Trajectories
+We additionally provide a simple visualizer tool to examine and view the code, sub-LM, and root-LM calls of an RLM trajectory. 
