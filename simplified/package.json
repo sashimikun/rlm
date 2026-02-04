@@ -1,0 +1,22 @@
+{
+  "name": "rlm-simplified",
+  "version": "0.1.0",
+  "description": "Simplified Recursive Language Models implementation using Vercel AI SDK",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ai": "^4.1.17",
+    "@ai-sdk/openai": "^1.1.9",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.1",
+    "python-shell": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
